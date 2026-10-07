@@ -1,0 +1,510 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1f1f1f;
+}
+
+
+/* =========================================
+   PÁGINA
+========================================= */
+
+.pagina-login {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* =========================================
+   TELA DO SIPS - COMPUTADOR
+========================================= */
+
+.login-card {
+    position: relative;
+
+    width: 313px;
+    height: 679px;
+
+    background-color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   CONTEÚDO
+========================================= */
+
+.login-conteudo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+
+    transform: translateY(40px);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.login-logo {
+    position: absolute;
+
+    top: 75px;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    z-index: 10;
+}
+
+.login-logo img {
+    width: 250px;
+    height: auto;
+
+    display: block;
+
+    max-width: 80%;
+}
+
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+.form-login {
+    position: absolute;
+
+    top: 260px;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.campo {
+    width: 245px;
+
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #222222;
+}
+
+.campo input {
+    width: 100%;
+    height: 40px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d6d6d6;
+    border-radius: 7px;
+
+    background-color: #ffffff;
+
+    color: #222222;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease;
+}
+
+.campo input::placeholder {
+    color: #b8b8b8;
+}
+
+.campo input:focus {
+    border-color: #ed0015;
+}
+
+
+/* =========================================
+   CAMPO SENHA
+========================================= */
+
+.campo-senha {
+    position: relative;
+
+    width: 100%;
+}
+
+.campo-senha input {
+    padding-right: 42px;
+}
+
+
+/* =========================================
+   BOTÃO MOSTRAR SENHA
+========================================= */
+
+.mostrar-senha {
+    position: absolute;
+
+    top: 50%;
+    right: 8px;
+
+    width: 28px;
+    height: 28px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #bdbdbd;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.mostrar-senha:hover {
+    color: #777777;
+}
+
+
+/* =========================================
+   OPÇÕES DE LOGIN
+========================================= */
+
+.opcoes-login {
+    width: 245px;
+
+    margin-top: -3px;
+    margin-bottom: 24px;
+}
+
+.lembrar {
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+
+    cursor: pointer;
+}
+
+.lembrar input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.checkbox-custom {
+    width: 17px;
+    height: 17px;
+
+    display: inline-block;
+
+    border: 2px solid #d2d2d2;
+    border-radius: 50%;
+
+    margin-right: 7px;
+
+    background-color: #ffffff;
+
+    position: relative;
+}
+
+.lembrar input:checked + .checkbox-custom {
+    border-color: #ed0015;
+}
+
+.lembrar input:checked + .checkbox-custom::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background-color: #ed0015;
+}
+
+.texto-lembrar {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    color: #555555;
+}
+
+
+/* =========================================
+   BOTÃO ENTRAR
+========================================= */
+
+.login-botao {
+    width: 245px;
+    height: 51px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 13px;
+
+    background-color: #ed0015;
+
+    color: #ffffff;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.login-botao:hover {
+    background-color: #d90013;
+}
+
+
+/* =========================================
+   ESQUECI A SENHA
+========================================= */
+
+.esqueci-senha {
+    margin-top: 25px;
+
+    color: #ed0015;
+
+    text-decoration: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.esqueci-senha:hover {
+    color: #c90012;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   ÁREA DA ONDA
+========================================= */
+
+.login-onda-area {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 250px;
+
+    overflow: visible;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   ONDA PNG
+========================================= */
+
+.login-onda {
+    position: absolute;
+
+    left: 50%;
+    top: 80px;
+
+    width: 100%;
+    height: auto;
+
+    transform: translateX(-50%);
+
+    display: block;
+
+    max-width: none;
+}
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+    .pagina-login {
+        width: 100%;
+        height: 100dvh;
+        min-height: 100dvh;
+
+        padding: 0;
+
+        display: block;
+    }
+
+    .login-card {
+        width: 100%;
+        height: 100dvh;
+        min-height: 100dvh;
+
+        margin: 0;
+
+        border-radius: 0;
+
+        transform: none;
+    }
+
+
+    /* LOGO */
+
+    .login-logo {
+        top: 11%;
+    }
+
+    .login-logo img {
+        width: 70%;
+        max-width: 280px;
+    }
+
+
+    /* FORMULÁRIO */
+
+    .form-login {
+        top: 34%;
+
+        width: 100%;
+    }
+
+    .campo {
+        width: 78%;
+        max-width: 300px;
+    }
+
+    .opcoes-login {
+        width: 78%;
+        max-width: 300px;
+    }
+
+    .login-botao {
+        width: 78%;
+        max-width: 300px;
+    }
+
+
+    /* LINK */
+
+    .esqueci-senha {
+        font-size: 11px;
+    }
+
+
+    /* ONDA */
+
+    .login-onda-area {
+        height: 30vh;
+    }
+
+    .login-onda {
+        left: 50%;
+        bottom: 0;
+
+        width: 100%;
+        height: auto;
+
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =========================================
+   TELAS MUITO PEQUENAS
+========================================= */
+
+@media (max-width: 600px) and (max-height: 700px) {
+
+    .login-logo {
+        top: 9%;
+    }
+
+    .form-login {
+        top: 31%;
+    }
+
+    .login-onda-area {
+        height: 28vh;
+    }
+}

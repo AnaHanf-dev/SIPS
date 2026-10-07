@@ -1,0 +1,542 @@
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+
+    background-color: #1f1f1f;
+}
+
+
+
+/* =====================================================
+   APLICAÇÃO
+===================================================== */
+
+.sips-app {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    margin: 0 auto;
+
+    background-color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+
+/* =====================================================
+   CONTEÚDO
+===================================================== */
+
+.sips-conteudo {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    padding-top: 82px;
+    padding-bottom: 115px;
+
+    z-index: 5;
+
+    overflow-y: auto;
+}
+
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.sips-header {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 82px;
+
+    padding: 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background-color: #ffffff;
+
+    z-index: 20;
+}
+
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.sips-logo-area {
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.sips-logo-area a {
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.sips-logo {
+
+    width: 95px;
+
+    height: auto;
+
+    display: block;
+}
+
+
+
+/* =====================================================
+   SINO DE NOTIFICAÇÃO
+===================================================== */
+
+.sips-notificacao {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.sips-notificacao a {
+
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #1f1f1f;
+
+    text-decoration: none;
+
+    border-radius: 50%;
+
+    transition: 0.2s ease;
+}
+
+
+.sips-notificacao a:hover {
+
+    background-color: #f5f5f5;
+}
+
+
+.sips-notificacao i {
+
+    font-size: 22px;
+}
+
+
+
+/* =====================================================
+   PONTO DE NOTIFICAÇÃO
+===================================================== */
+
+.notificacao-ponto {
+
+    position: absolute;
+
+    top: 7px;
+    right: 7px;
+
+    width: 9px;
+    height: 9px;
+
+    background-color: #ed0015;
+
+    border-radius: 50%;
+
+    border: 2px solid #ffffff;
+}
+
+
+
+/* =====================================================
+   FUNDO VERMELHO / ONDA
+===================================================== */
+
+.sips-fundo-vermelho {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    /*
+       Aumentamos a altura da área
+       vermelha na parte inferior.
+    */
+    height: 260px;
+
+    overflow: visible;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   IMAGEM DA ONDA
+===================================================== */
+
+.sips-onda {
+
+    position: absolute;
+
+    left: 50%;
+
+    /*
+       Controla a altura em que
+       a onda começa a aparecer.
+    */
+    top: 40px;
+
+    width: 100%;
+
+    height: auto;
+
+    transform: translateX(-50%);
+
+    display: block;
+
+    max-width: none;
+}
+
+
+
+/* =====================================================
+   NAVEGAÇÃO INFERIOR
+===================================================== */
+
+.sips-menu {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    height: 92px;
+
+    padding: 10px 18px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    z-index: 30;
+}
+
+
+
+/* =====================================================
+   ITENS DA NAVEGAÇÃO
+===================================================== */
+
+.sips-menu-item {
+
+    position: relative;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+
+/* =====================================================
+   ÍCONES DA NAVEGAÇÃO
+===================================================== */
+
+.sips-menu-icone {
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    /*
+       Aumentado de 21px para 27px
+    */
+    font-size: 27px;
+
+    transition: 0.2s ease;
+}
+
+
+/* =====================================================
+   PÁGINA ATUAL / ATIVA
+===================================================== */
+
+.sips-menu-item.ativo .sips-menu-icone {
+
+    background-color: #ffffff;
+
+    color: #ed0015;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.sips-menu-item:hover {
+
+    color: #ffffff;
+}
+
+
+.sips-menu-item:hover .sips-menu-icone {
+
+    transform: translateY(-3px);
+}
+
+
+.sips-menu-item.ativo:hover .sips-menu-icone {
+
+    transform: translateY(-5px);
+}
+
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+
+    body {
+
+        background-color: #ffffff;
+    }
+
+
+    .sips-app {
+
+        width: 100%;
+        max-width: none;
+
+        height: 100dvh;
+        min-height: 100dvh;
+
+        margin: 0;
+
+        border-radius: 0;
+    }
+
+
+    /* CABEÇALHO */
+
+    .sips-header {
+
+        height: 76px;
+
+        padding: 0 22px;
+    }
+
+
+    .sips-logo {
+
+        width: 92px;
+    }
+
+
+    /* CONTEÚDO */
+
+    .sips-conteudo {
+
+        padding-top: 76px;
+
+        padding-bottom: 110px;
+
+        height: 100dvh;
+
+        min-height: 100dvh;
+
+        overflow-y: auto;
+    }
+
+
+    /* ONDA */
+
+    .sips-fundo-vermelho {
+
+        height: 250px;
+
+        overflow: visible;
+    }
+
+
+    .sips-onda {
+
+        left: 50%;
+
+        top: 40px;
+
+        width: 100%;
+
+        transform: translateX(-50%);
+    }
+
+
+    /* MENU */
+
+    .sips-menu {
+
+        height: 88px;
+
+        padding: 8px 15px 14px;
+    }
+
+
+    .sips-menu-item {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sips-menu-icone {
+        width: 42px;
+        height: 42px;
+
+        font-size: 20px;
+    }
+
+}
+
+
+
+/* =====================================================
+   TELAS MUITO PEQUENAS
+===================================================== */
+
+@media (max-width: 350px) {
+
+    .sips-header {
+
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+
+    .sips-logo {
+
+        width: 85px;
+    }
+
+
+    .sips-menu {
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    .sips-menu-item {
+
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .sips-menu-icone {
+
+        width: 39px;
+        height: 39px;
+
+        font-size: 18px;
+    }
+
+}
