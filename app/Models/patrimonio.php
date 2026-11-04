@@ -15,4 +15,14 @@ class patrimonio extends Model
         'id_responsa',
         'descricao',
     ];
+
+    public function funcionarios()
+    {
+        return $this->belongsToMany(funcionarios::class, 'id_funcionario');
+    }
+
+    public function sala()
+    {
+        return $this->belongsTo(salas::class, 'id_salas');
+    }
 }

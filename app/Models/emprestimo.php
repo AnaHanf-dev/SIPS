@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\patrimonio;
+use App\Models\funcionarios;
 
 class emprestimo extends Model
 {
@@ -14,4 +16,14 @@ class emprestimo extends Model
         'data_emprestimo',
         'data_devolucao',
     ];
+
+    public function patrimonio()
+    {
+        return $this->belongsTo(patrimonio::class, 'id_patrimonio');
+    }
+
+    public function funcionario()
+    {
+        return $this->belongsTo(funcionarios::class, 'id_funcionario');
+    }
 }

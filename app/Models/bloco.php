@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\area_escola;
 
 class bloco extends Model
 {
@@ -13,4 +14,9 @@ class bloco extends Model
         'id_area',
         'descricao',
     ];
+
+    public function area()
+    {
+        return $this->belongsTo(area_escola::class, 'id_area');
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\emprestimo;
 
 class funcionarios extends Model
 {
@@ -15,4 +16,9 @@ class funcionarios extends Model
         'cargo',
         'NIF',
     ];
+
+    public function emprestimos()
+    {
+        return $this->hasMany(emprestimo::class, 'id_funcionario');
+    }
 }

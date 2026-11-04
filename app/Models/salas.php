@@ -13,4 +13,14 @@ class salas extends Model
         'id_bloco',
         'descricao',
     ];
+
+    public function bloco()
+    {
+        return $this->belongsTo(bloco::class, 'id_bloco');
+    }
+
+    public function patrimonio()
+    {
+        return $this->hasMany(patrimonio::class, 'id_salas');
+    }
 }

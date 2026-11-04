@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\blocos;
+
 
 class area_escola extends Model
 {
@@ -13,4 +15,8 @@ class area_escola extends Model
         'localizacao',
         'descricao',
     ];
+
+    public function bloco(){
+        return $this->hasMany(bloco::class, 'id_area');
+    }
 }
