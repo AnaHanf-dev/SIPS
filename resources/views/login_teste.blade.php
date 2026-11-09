@@ -25,10 +25,10 @@
                     <div id="emailHelp" class="form-text">Coloque o email cadastrado.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Senha</label>
-                    <input type="password" class="form-control form-control-sm" id="password">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="senha" class="form-control form-control-sm" id="senha">
                 </div>
-                <button type="button" class="btn btn-login">Entrar</button>
+                <button type="button" class="btn btn-login" id="btn-login">Entrar</button>
             </div>
         </div>
     </div>

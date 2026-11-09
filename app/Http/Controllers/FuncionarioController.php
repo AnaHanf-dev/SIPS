@@ -133,7 +133,8 @@ class FuncionarioController extends Controller
                 $user_token->token = Hash::make($funcionario->id . $funcionario->email . now());
                 $user_token->valido_ate = now()->addDays(7);
                 $user_token->save();
-                return response()->json(['message' => 'Login realizado com sucesso' , 'erro' => 'n', 'token' => $user_token->token],200 );
+
+                return response()->json(['message' => 'Login realizado com sucesso' , 'erro' => 'n', 'token' => $user_token->token,"funcionario_id" => $funcionario->id],200 );
 
             }else{
             return response()->json(['message' => 'funcionarios ou senha não encontrado', 'erro' => 's'],200);
