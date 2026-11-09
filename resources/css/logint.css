@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    background-color: #f4f5f7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Cartão do login */
+.container > .row > .col-5 {
+    background-color: #ffffff !important;
+    border: none !important;
+    border-radius: 18px !important;
+    padding: 35px !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07) !important;
+    width: 90%;
+    max-width: 430px;
+}
+
+h3 {
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 30px;
+}
+
+.form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-control {
+    border: 1px solid #e1e1e1;
+    border-radius: 9px;
+    padding: 12px;
+    font-size: 13px;
+    background-color: #fafafa;
+}
+
+.form-control:focus {
+    border-color: #b91c32;
+    box-shadow: 0 0 0 3px rgba(185, 28, 50, 0.1);
+    background-color: #fff;
+}
+
+.form-text {
+    font-size: 11px;
+    color: #999;
+}
+
+.btn-login {
+    display: block;
+    margin: 25px auto 0;
+    width: 100%;
+    background-color: #b91c32;
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color .3s, transform .3s, box-shadow .3s;
+}
+
+.btn-login:hover {
+    background-color: #95172a;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(185, 28, 50, 0.2);
+}
+
+.btn-login:focus-visible {
+    outline: 3px solid rgba(185, 28, 50, 0.35);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-login { transition: none; }
+    .btn-login:hover { transform: none; }
+}

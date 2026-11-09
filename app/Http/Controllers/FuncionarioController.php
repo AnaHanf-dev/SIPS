@@ -15,18 +15,18 @@ class FuncionarioController extends Controller
     //     return view('cadastro_funcionarios');
     // }
 
-    public function salvar_funcionarios(Request $request){
+    public function salvar_funcionario(Request $request){
         $request->validate([
-            'nome_funcionarios' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:funcionarioss',
+            'nome_funcionario' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:funcionarios',
             'senha' => 'required|string',
             'cargo' => 'required|string|max:255',
-            'NIF' => 'required|string|unique:funcionarioss',
+            'NIF' => 'required|string|unique:funcionarios',
         ]);
 
         try {
-            $funcionarios = new funcionarioss();
-            $funcionarios->nome_funcionarios = $request->nome_funcionarios;
+            $funcionarios = new funcionarios();
+            $funcionarios->nome_funcionario = $request->nome_funcionario;
             $funcionarios->email = $request->email;
             $funcionarios->senha = Hash::make($request->senha);
             $funcionarios->cargo = $request->cargo;
@@ -40,11 +40,11 @@ class FuncionarioController extends Controller
 
     }
 
-    public function ver_funcionarios(Request $request){
+    public function ver_funcionario(Request $request){
         $request->validate([
             'id' => 'required|integer',
         ]);
-        $funcionarios = funcionarioss::find($request->id);
+        $funcionarios = funcionarios::find($request->id);
         if($funcionarios){
             return response()->json(['funcionarios' => $funcionarios, 'error' => 'n'], 200);
         }else{
@@ -52,20 +52,20 @@ class FuncionarioController extends Controller
         }
     }
 
-    public function listar_funcionarioss(Request $request){
-        $funcionarioss = funcionarioss::all();
-        return response()->json(['funcionarioss' => $funcionarioss], 200);
+    public function listar_funcionarios(Request $request){
+        $funcionarios = funcionarios::all();
+        return response()->json(['funcionarios' => $funcionarios], 200);
     }
 
     public function listar_funci_simples(Request $request){
-        $funcionarioss = funcionarioss::select('nome_funcionarios', 'email', 'NIF', 'senha')->get();
-        return response()->json(['funcionarioss' => $funcionarioss], 200);
+        $funcionarios = funcionarios::select('nome_funcionario', 'email', 'NIF', 'senha')->get();
+        return response()->json(['funcionarios' => $funcionarios], 200);
     }
 
-    public function alterar_funcionarios(Request $request){
+    public function alterar_funcionario(Request $request){
         $request->validate([
-            'id' => 'required|integer|exists:funcionarioss,id',
-            'nome_funcionarios' => 'required|string|max:255',
+            'id' => 'required|integer|exists:funcionarios,id',
+            'nome_funcionario' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'senha' => 'required|string',
             'cargo' => 'required|string|max:255',
@@ -73,23 +73,23 @@ class FuncionarioController extends Controller
         ]);
 
         try {
-            $funcionarios = funcionarioss::find($request->id);
+            $funcionarios = funcionarios::find($request->id);
 
             if($funcionarios->NIF != $request->NIF){
-                $funci_nif_igual = funcionarioss::where('NIF', $request->NIF)->first();
+                $funci_nif_igual = funcionarios::where('NIF', $request->NIF)->first();
                 if($funci_nif_igual){
                     return response()->json(['mensagem' => 'NIF já cadastrado para outro funcionário', 'error' => 's'], 200);
                 }
             }
 
             if($funcionarios->email != $request->email){
-                $funci_email_igual = funcionarioss::where('email', $request->email)->first();
+                $funci_email_igual = funcionarios::where('email', $request->email)->first();
                 if($funci_email_igual){
                     return response()->json(['mensagem' => 'Email já cadastrado para outro funcionário', 'error' => 's'], 200);
                 }
             }
 
-            $funcionarios->nome_funcionarios = $request->nome_funcionarios;
+            $funcionarios->nome_funcionario = $request->nome_funcionario;
             $funcionarios->email = $request->email;
             $funcionarios->senha = Hash::make($request->senha);
             $funcionarios->cargo = $request->cargo;
@@ -103,13 +103,13 @@ class FuncionarioController extends Controller
 
     }
 
-    public function deletar_funcionarios(Request $request){
+    public function deletar_funcionario(Request $request){
         $request->validate([
-            'id' => 'required|integer|exists:funcionarioss,id',
+            'id' => 'required|integer|exists:funcionarios,id',
         ]);
 
         try {
-            $funcionarios = funcionarioss::find($request->id);
+            $funcionarios = funcionarios::find($request->id);
             $funcionarios->delete();
 
             return response()->json(['mensagem' => 'Funcionário deletado com sucesso!','error' => 'n'], 200);
@@ -120,8 +120,8 @@ class FuncionarioController extends Controller
 
     public function login(Request $request){
         $request->validate([
-            'email' => 'required|',
-            'senha' => 'required|',
+            'email' => 'required',
+            'senha' => 'required',
         ]);
 
 

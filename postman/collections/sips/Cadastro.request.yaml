@@ -1,0 +1,20 @@
+$kind: http-request
+url: http://sips.test/api/salvar_funcionario
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"nome_funcionario\": \"...\",\r
+
+    \    \"email\": \"...\",\r
+
+    \    \"senha\": \"...\",\r
+
+    \    \"cargo\": \"...\",\r
+
+    \    \"NIF\": \"...\"\r
+
+    }"
+examples: .resources/Cadastro.resources/examples
+order: 3000

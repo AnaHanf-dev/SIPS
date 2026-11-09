@@ -1,0 +1,23 @@
+$kind: http-request
+description: ""
+url: http://10.122.41.153:8000/api/usuario_cadastro
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"nome\": \"Ana Clara Hanf\",\r
+
+    \    \"email\": \"ana2@gmail.com\",\r
+
+    \    \"senha\": \"12345678\",\r
+
+    \    \"cpf\": \"50459444876\",\r
+
+    \    \"data_nascimento\": \"2009-07-07\",\r
+
+    \    \"nivel\": \"admin\"\r
+
+    }"
+examples: .resources/Cadastro_Daniel.resources/examples
+order: 6000

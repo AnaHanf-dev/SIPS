@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: http://sips.test/api/salvar_funcionario
+  method: POST
+  body:
+    type: json
+    content: "{\r
+
+      \    \"nome_funcionario\": \"Lara\",\r
+
+      \    \"email\": \"lara@gmail.com\",\r
+
+      \    \"senha\": \"12345678\",\r
+
+      \    \"cargo\": \"Diretora\",\r
+
+      \    \"NIF\": \"SN1357911\"\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Server: nginx/1.25.2
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Vary: Accept-Encoding
+    X-Powered-By: PHP/8.4.26
+    Cache-Control: no-cache, private
+    Date: Mon, 09 Nov 2026 11:26:41 GMT
+    Access-Control-Allow-Origin: "*"
+    Content-Encoding: gzip
+  body:
+    type: json
+    content: |-
+      {
+        "mensagem": "Funcionário cadastrado com sucesso!",
+        "error": "n"
+      }
+order: 1000

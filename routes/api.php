@@ -10,6 +10,7 @@ use App\Http\Controllers\SalaController;
 use App\Http\Controllers\PatrimonioController;
 use App\Http\Controllers\EmprestimoController;
 use App\Http\Middleware\LoginMiddleware;
+use App\Http\Controllers\LoginController;
 
 
 Route::get('/user', function (Request $request) {
@@ -73,3 +74,4 @@ Route::put('/alterar_emprestimo', [EmprestimoController::class, 'alterar_emprest
 Route::delete('/deletar_emprestimo', [EmprestimoController::class, 'deletar_emprestimo'])->name('deletar_emprestimo');
 
 //LOG IN
+

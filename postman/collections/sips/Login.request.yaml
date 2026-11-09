@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://sips.test/api/login
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\":\"...\",\r
+
+    \    \"senha\":\"...\"\r
+
+    }"
+examples: .resources/Login.resources/examples
+order: 1000

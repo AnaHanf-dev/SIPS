@@ -1,0 +1,5 @@
+$kind: http-request
+description: ""
+url: http://sips.test/api/listar_funcionarios
+method: GET
+order: 5000

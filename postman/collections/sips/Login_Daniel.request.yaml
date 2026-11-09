@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://10.122.41.153:8000/api/login
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\": \"ana2@gmail.com\",\r
+
+    \    \"senha\": \"12345678\"\r
+
+    }"
+examples: .resources/Login_Daniel.resources/examples
+order: 7000

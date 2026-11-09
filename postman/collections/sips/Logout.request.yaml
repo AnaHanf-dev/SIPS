@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://sips.test/api/logout
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"id_funcionario\":,\r
+
+    \    \"token\":\"...\"\r
+
+    }"
+examples: .resources/Logout.resources/examples
+order: 4000

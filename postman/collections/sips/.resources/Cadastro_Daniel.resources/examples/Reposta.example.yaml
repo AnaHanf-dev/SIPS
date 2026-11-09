@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: http://10.122.41.153:8000/api/usuario_cadastro
+  method: POST
+  body:
+    type: json
+    content: "{\r
+
+      \    \"nome\": \"Ana Clara Hanf\",\r
+
+      \    \"email\": \"ana2@gmail.com\",\r
+
+      \    \"senha\": \"12345678\",\r
+
+      \    \"cpf\": \"50459444876\",\r
+
+      \    \"data_nascimento\": \"2009-07-07\",\r
+
+      \    \"nivel\": \"admin\"\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Host: 10.122.41.153:8000
+    Connection: close
+    X-Powered-By: PHP/8.4.27
+    Cache-Control: no-cache, private
+    Date: Mon, 09 Nov 2026 12:44:25 GMT
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: json
+    content: |-
+      {
+        "message": "Usuário Cadastrado com Sucesso!",
+        "id": 2
+      }
+order: 1000
