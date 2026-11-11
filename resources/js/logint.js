@@ -32,9 +32,10 @@ $(document).ready(function() {
             success: function(response) {
                 console.log(response);
                 if (response.erro == 'n') {
-                    alert(response.token);
+                 
                     $.cookie("user_token", response.token, { expires: 7 });
                     $.cookie("funcionario_id", response.funcionario_id, { expires: 7 });
+
                     setTimeout(function() {
                         window.location.href = '../home';
                     }, 3000);
