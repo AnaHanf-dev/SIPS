@@ -1,0 +1,21 @@
+
+.home-page {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: white;
+}
+
+.home-card {
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}

@@ -1,20 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LOGIN</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-</head>
-<body>
-    <div class="container mt-5">
-        <h3 class="text-center">Bem vindos, {{ $funcionario->nome }}!</h3>
+
+@extends('layouts.app')
+
+@section('titulo', 'Home - SIPS')
+
+@push('styles')
+    @vite('resources/css/home.css')
+@endpush
+
+@section('conteudo')
+<main class="home-page">
+    <div class="home-card">
+        <header class="home-header">
+            <img src="{{ asset('IMAGENS/LOGOS/Logo_inicio.png') }}" alt="SIPS" class="home-logo">
+            <h1>Bem-vindo, {{ $funcionario->nome_funcionario }}!</h1>
+            <p>Sistema Integrado de Patrimônio SESI</p>
+        </header>
+
+        <section class="home-content">
+            @if($admin == 'S')
+                <div class="admin-area">
+                    <div class="home-icon">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                    <h2>Painel Administrativo</h2>
+                    <p>Gerencie os recursos e acompanhe as atividades do sistema.</p>
+                    <a href="{{ route('painel') }}" class="btn-admin">
+                        <i class="bi bi-grid-1x2"></i> Acessar Painel
+                    </a>
+                </div>
+            @else
+                <div class="usuario-area">
+                    <div class="home-icon">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+                    <h2>Acesso de funcionário</h2>
+                    <p>Você está autenticado no SIPS. Seu perfil não possui permissão para acessar o painel administrativo.</p>
+                </div>
+            @endif
+        </section>
     </div>
-</body>
-</html>
+</main>
+@endsection
+
+@push('scripts')
+    @vite('resources/js/home.js')
+@endpush

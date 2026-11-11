@@ -9,6 +9,7 @@ use App\Models\FunciToken;
 use App\Models\funcionarios;
 use Illuminate\Support\Facades\Cookie;
 use Carbon\Carbon;
+use App\Models\Admin;
 
 class LogadoWebMiddleware
 {
@@ -19,26 +20,32 @@ class LogadoWebMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Cookie::has('token') && Cookie::has('funcionario_id')){
-            $funcionario_id = Cookie::get('funcionario_id');
-            $token = Cookie::get('token');
-            $token_usuario = FunciToken::where('funcionario_id', $funcionario_id)
+        if(Cookie::has('user_token') && Cookie::has('id_funcionario')){
+            $id_funcionario = Cookie::get('id_funcionario');
+            $token = Cookie::get('user_token');
+            $token_funcionario = FunciToken::where('id_funcionario', $id_funcionario)
             ->where('token', $token)
             ->where('valido_ate', '>', Carbon::now())
             ->first();
-            if($token_usuario){
-                $funcionario = funcionarios::find($funcionario_id);
+            if($token_funcionario){
+                $funcionario = funcionarios::find($id_funcionario);
                 $request->funcionario = $funcionario;
+                $admin = Admin::where('id_funcionario', $id_funcionario)->first();
+                if($admin){
+                    $request->admin = 'S';
+                }else{
+                    $request->admin = 'N';
+                }
                 return $next($request);
 
             }else{
-                Cookie::forget('token');
-                Cookie::forget('funcionario_id');
+                Cookie::forget('user_token');
+                Cookie::forget('id_funcionario');
                 return redirect()->route('log');
             }
         }else{
-            Cookie::forget('token');
-            Cookie::forget('funcionario_id');
+            Cookie::forget('user_token');
+            Cookie::forget('id_funcionario');
             return redirect()->route('log');
         }
     }

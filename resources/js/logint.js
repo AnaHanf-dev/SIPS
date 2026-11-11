@@ -34,7 +34,9 @@ $(document).ready(function() {
                 if (response.erro == 'n') {
                  
                     $.cookie("user_token", response.token, { expires: 7 });
-                    $.cookie("funcionario_id", response.funcionario_id, { expires: 7 });
+                    $.cookie("id_funcionario", response.funcionario_id, { expires: 7 });
+
+                    
 
                     setTimeout(function() {
                         window.location.href = '../home';
